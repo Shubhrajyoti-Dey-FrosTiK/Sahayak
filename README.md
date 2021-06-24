@@ -24,8 +24,8 @@ All the instructions about the command will be given there
 
 ### Selenium :
  ```
-For Windows : `pip install selenium`
-For Mac/Linux : `pip3 install selenium`
+For Windows : pip install selenium
+For Mac/Linux : pip3 install selenium
 ```
 
 ### ChromeDriver :
