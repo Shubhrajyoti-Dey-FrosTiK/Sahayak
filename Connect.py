@@ -29,7 +29,7 @@ async def op(ctx,msg,UserID,time) :
     print(len(RS))
     for i in range(0,len(RS)) :
       # await message.channel.send(RS[i])
-      print(RS[i])
+      # print(RS[i])
       await ctx.send(RS[i])
     await ctx.send("https://www.cowin.gov.in/home")
     await asyncio.sleep(time)
@@ -40,12 +40,12 @@ async def op(ctx,msg,UserID,time) :
 # @commands.has_permissions(administrator=True)
 @bot.command()
 async def end(ctx) :
-  guild = ctx.guild
-  user = ctx.message.author
-  perms=discord.Permissions(permissions=28)
-  await guild.create_role(name="Sahayak_Admin",permissions = perms)
-  role = discord.utils.get(ctx.guild.roles, name="Sahayak_Admin")
-  await user.add_roles(role)
+  # guild = ctx.guild
+  # user = ctx.message.author
+  # perms=discord.Permissions(permissions=28)
+  # await guild.create_role(name="Sahayak_Admin",permissions = perms)
+  # role = discord.utils.get(ctx.guild.roles, name="Sahayak_Admin")
+  # await user.add_roles(role)
 
 
   try :
@@ -57,9 +57,9 @@ async def end(ctx) :
   except :
     pass
 
-  await user.remove_roles(role)
-  role_object = discord.utils.get(ctx.message.guild.roles, name="Sahayak_Admin")
-  await role_object.delete()
+  # await user.remove_roles(role)
+  # role_object = discord.utils.get(ctx.message.guild.roles, name="Sahayak_Admin")
+  # await role_object.delete()
 
 @bot.command() 
 async def get_info(ctx,*args) :

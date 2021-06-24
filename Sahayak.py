@@ -96,25 +96,6 @@ async def sahayak(message) :
     options.add_argument('--no-sandbox')
     driver = webdriver.Chrome(executable_path="chromedriver", options=options)
 
-
-
-    # chrome_options = webdriver.ChromeOptions()
-    # chrome_options.binary_location = os.environ.get("/app/.apt/usr/bin/google-chrome")
-    # chrome_options.add_argument(f'user-agent={user_agent}')
-    # chrome_options.add_argument("--headless")
-    # chrome_options.add_argument("--disable-dev-shm-usage")
-    # chrome_options.add_argument("--no-sandbox")
-    # chrome_options.add_argument("--disable-extensions")
-    # chrome_options.add_argument("--proxy-server='direct://'")
-    # chrome_options.add_argument("--proxy-bypass-list=*")
-    # chrome_options.add_argument("--start-maximized")
-    # chrome_options.add_argument('--disable-gpu')
-    # chrome_options.add_argument('--disable-dev-shm-usage')
-    # chrome_options.add_argument('--ignore-certificate-errors')
-    # chrome_options.add_argument("--window-size=1920,1080")
-    # driver = webdriver.Chrome(executable_path=os.environ.get("/app/.chromedriver/bin/chromedriver"), chrome_options=chrome_options)
-
-    # driver = webdriver.Chrome()
     driver.get("https://www.cowin.gov.in/home")
 
     TabbedSearch = driver.find_elements_by_xpath('//*[@id="mat-tab-label-0-1"]/div')
@@ -235,20 +216,6 @@ async def sahayak(message) :
         itr = itr + 1 
     # print(i)
 
-
-
-    # i=0
-    # PayInfo18 = []
-    # for p in soup.find_all("div",class_ = "main-slider-wrap") :
-    #     s= p.get_text()
-    #     # if s[0] != ' ' :
-    #         # if len(s) > 4 :
-    #     PayInfo18.append(s)
-    #     i = i + 1
-    # # print(i)
-
-
-
     i = 0
     DoseAvailability18 = []
     for p in soup.find_all("div",class_ = "slot-available-main") :
@@ -257,21 +224,6 @@ async def sahayak(message) :
         DoseAvailability18.append(s)
         i = i + 1
     # print(i)
-
-
-
-    # i = 0
-    ##print(len(PayInfo18))
-    # for i in range(0,len(PayInfo18)) :
-    #     PayInfo18[i] = PayInfo18[i].replace(Address18[i],"")
-    #     PayInfo18[i] = PayInfo18[i].replace(HospitalName18[i],"")
-    #     if(PayInfo18[i] == '') :
-    #         PayInfo18[i] = "Free" ;
-    #     ##print(PayInfo18[i])
-    #     i = i + 1
-    ##print(i) 
-
-
 
     i = 0
     ##print(len(DoseAvailability18))
@@ -397,19 +349,6 @@ async def sahayak(message) :
         itr = itr + 1 
     ##print(i)
 
-
-
-    # ##print The type of the vaccine 
-    # i=0
-    # PayInfo45 = []
-    # for p in soup.find_all("div",class_ = "main-slider-wrap") :
-    #     s= p.get_text()
-    #     # if s[0] != ' ' :
-    #         # if len(s) > 4 :
-    #     PayInfo45.append(s)
-    #     i = i + 1
-    ##print(i)
-
     i = 0
     DoseAvailability45 = []
     for p in soup.find_all("div",class_ = "slot-available-main") :
@@ -418,19 +357,6 @@ async def sahayak(message) :
         DoseAvailability45.append(s)
         i = i + 1
     ##print(i)
-
-    # i = 0
-    # #print(len(PayInfo45))
-    # for i in range(0,len(PayInfo45)) :
-    #     PayInfo45[i] = PayInfo45[i].replace(Address45[i],"")
-    #     PayInfo45[i] = PayInfo45[i].replace(HospitalName45[i],"")
-    #     if(PayInfo45[i] == '') :
-    #         PayInfo45[i] = "Free" ;
-    #     ##print(PayInfo45[i])
-    #     i = i + 1
-    ##print(i) 
-
-
 
     i = 0
     ##print(len(DoseAvailability45))
@@ -521,31 +447,4 @@ async def sahayak(message) :
             ReturnStatement = ""
 
     driver.quit()
-    
     return RS
-
-# async def __init__() :
-#     RS = await sahayak("-get_info #2#Punjab#Jalandhar#1#2")
-#     print(len(RS))
-#     for i in range(0,len(RS)) :
-#       # await message.channel.send(RS[i])
-#       print(RS[i])
-
-RS = asyncio.run(sahayak("-get_info #1#Punjab#Jalandhar#1#1"))
-for i in range(0,len(RS)) :
-      # await message.channel.send(RS[i])
-      print(RS[i])
-
-
-# //*[@id="mat-option-1"]/span
-# //*[@id="mat-option-0"]/span
-# //*[@id="mat-option-36"]/span
-
-
-# //*[@id="mat-option-37"]/span 
-# //*[@id="mat-option-70"]/span 
-# //*[@id="mat-option-71"]/span 
-# //*[@id="mat-option-72"]/span 
-# //*[@id="mat-option-73"]/span
-# //*[@id="mat-option-102"]/span 
-
