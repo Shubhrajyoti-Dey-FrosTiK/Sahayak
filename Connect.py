@@ -23,31 +23,18 @@ async def hi(ctx) :
 
 async def op(ctx,msg,UserID,time) :
   global flag
-  # print("flag ={flag}}")
   while flag[UserID] == 1 :
     RS = await asyncio.create_task(sahayak(msg)) 
     print(len(RS))
     for i in range(0,len(RS)) :
-      # await message.channel.send(RS[i])
-      # print(RS[i])
       await ctx.send(RS[i])
     await ctx.send("https://www.cowin.gov.in/home")
     await asyncio.sleep(time)
     if flag == 0 :
       break
 
-
-# @commands.has_permissions(administrator=True)
 @bot.command()
 async def end(ctx) :
-  # guild = ctx.guild
-  # user = ctx.message.author
-  # perms=discord.Permissions(permissions=28)
-  # await guild.create_role(name="Sahayak_Admin",permissions = perms)
-  # role = discord.utils.get(ctx.guild.roles, name="Sahayak_Admin")
-  # await user.add_roles(role)
-
-
   try :
     global flag
     flag[ctx.author.id] = 0
@@ -57,20 +44,9 @@ async def end(ctx) :
   except :
     pass
 
-  # await user.remove_roles(role)
-  # role_object = discord.utils.get(ctx.message.guild.roles, name="Sahayak_Admin")
-  # await role_object.delete()
 
 @bot.command() 
 async def get_info(ctx,*args) :
-  # guild = ctx.guild
-  # user = ctx.message.author
-  # perms=discord.Permissions(permissions=28)
-  # await guild.create_role(name="Sahayak_Admin",permissions = perms)
-  # role = discord.utils.get(ctx.guild.roles, name="Sahayak_Admin")
-  # await user.add_roles(role)
-
-
   global flag
   flag[ctx.author.id] = 1
   msg = "M"
@@ -78,13 +54,9 @@ async def get_info(ctx,*args) :
     msg=msg+args[i]+" "
   UserID = ctx.author.id
 
-  # await user.remove_roles(role)
-  # role_object = discord.utils.get(ctx.message.guild.roles, name="Sahayak_Admin")
-  # await role_object.delete()
   M = msg.split("#")
   print(flag)
-  print("\n")
 
   o = asyncio.create_task(op(ctx,msg,UserID,(int(M[6].replace(" ","")))*60*60))
 
-bot.run('ODU1MTU2NDE1OTU0Mjg4NjYw.YMuYeQ.UaD33oprOgo5k-RrATjZpHSBYEI')
+bot.run(YOUR_TOKEN)
